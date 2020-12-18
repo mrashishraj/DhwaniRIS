@@ -34,7 +34,11 @@ class App extends React.Component{
 
   handleDelete=(id)=>{
     const {cardData} = this.state
-    console.log(id)
+    let obj = cardData.filter(item=>item.id!==id)
+    
+    this.setState({
+      cardData:obj
+    })
   }
 
   render(){
@@ -45,7 +49,7 @@ class App extends React.Component{
       <h1>Credit Card Input Box</h1>
       <form onSubmit={this.handleSubmit}>
       <InputBoxes length={4} handleChange={this.handleChange}/> 
-      <input type="submit" value="submit" />
+      <input type="submit" style={{padding:"12px"}} value="Submit" />
       </form>    
       <div><Card cardData={cardData} handleDelete={this.handleDelete}/></div> 
     </div>
