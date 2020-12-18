@@ -1,0 +1,44 @@
+body{
+    font-family: arial;
+}
+
+.container{
+    width: 500px;
+    height: 400px;
+}
+
+.box{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    font-size: 25px;
+    float: left;
+    margin: 5px;
+}
+
+#box1{
+    background: darkseagreen;
+    top: 2;
+}
+
+#box2{
+    background: green;
+    left:220px;
+}
+
+#box3{
+    background: red;
+    top:220px;
+}
+
+#box4{
+    background: blue;
+    top:220px;
+    left:220px;    
+}
+
+#box5{
+    background: yellow;
+    top: 110px;
+    left: 110px;
+}
