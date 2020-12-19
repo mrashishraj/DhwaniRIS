@@ -1,4 +1,5 @@
 import React from "react"
+import '../App.css';
 
 
 export default class InputBoxes extends React.Component{
@@ -27,10 +28,9 @@ export default class InputBoxes extends React.Component{
     }
 
     handleKey=(e,i)=>{
-        if(e.keyCode==8 && this.element[i].value.length===0 && this.element[i-1]){
+        if(e.keyCode===8 && this.element[i].value.length===0 && this.element[i-1]){
             this.element[i-1].focus()
         }
-        // console.log(e.keyCode,this.element[i].value.length)
     }
 
     handlePaste=(e,i)=>{
@@ -67,14 +67,16 @@ export default class InputBoxes extends React.Component{
         return(
             <>
                 {InputLength.map((item,i)=>
-                <input key={i} 
+                <input 
+                type="text"
+                key={i} 
                 onPaste={(e,i)=>this.handlePaste(e,i)}
                 onChange={(e)=>this.handleChange(e,i)}
                 ref={(element)=>this.element[i]=element} 
                 onKeyUp={(e)=>this.handleKey(e,i)}
-                maxLength="4"
                 className="inputBox" 
-                type="text"/>)}
+                maxLength="4"
+                />)}
             </>
            
         )

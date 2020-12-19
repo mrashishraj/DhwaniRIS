@@ -27,9 +27,12 @@ class App extends React.Component{
       id:uuid(),
       value:value
     }
-    this.setState({
+    if(currentValue.value){
+      this.setState({
       cardData:[...cardData,currentValue]
     })
+    }
+    
   }
 
   handleDelete=(id)=>{
@@ -42,7 +45,7 @@ class App extends React.Component{
   }
 
   render(){
-    const {value,cardData} = this.state
+    const {cardData} = this.state
 
     return (
       <div className="App">
